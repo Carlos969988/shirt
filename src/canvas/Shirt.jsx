@@ -166,7 +166,7 @@ const Shirt = () => {
     <PresentationControls
     speed={0.9}
     global
-    // zoom={10}
+    zoom={10}
     rotation={[0, 0, 0]} // Default rotation
     polar={[0, Math.PI / 2]} // Vertical limits
     // azimuth={[-Infinity, Infinity]} // Horizontal limits
