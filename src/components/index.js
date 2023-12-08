@@ -4,6 +4,7 @@ import ColorPicker from "./ColorPicker";
 import FilePicker from "./FilePicker";
 import Tab from "./Tab";
 import ModalSend from "./ModalSend";
+// import MaterialMenu from "./MaterialMenu";
 
 export {
     CustomButton,
@@ -11,5 +12,6 @@ export {
     ColorPicker,
     FilePicker,
     Tab, 
-    ModalSend
+    ModalSend, 
+    // MaterialMenu
 };

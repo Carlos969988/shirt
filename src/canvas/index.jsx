@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment, Center } from '@react-three/drei';
+import { OrbitControls, Environment, Center, Stats } from '@react-three/drei';
+import { Suspense } from 'react'
+
 
 import Shirt from './Shirt';
 import Backdrop from './Backdrop';
@@ -18,6 +20,7 @@ const CanvasModel = () => {
         gl={{preserveDrawingBuffer:true}}
         className='w-full max-w-full h-full transition-all ease-in'
         >
+        {/* <Suspense fallback> */}
 
         <OrbitControls
         // ref={shirtRef}
@@ -29,6 +32,8 @@ const CanvasModel = () => {
         maxAzimuthAngle={Infinity} // Rotación horizontal ilimitada
         minAzimuthAngle={-Infinity} // Rotación horizontal ilimitada
         />
+
+
         <ambientLight intensity={0.3}/>
         <Environment preset='city'/>
         <CameraRig>
@@ -37,6 +42,8 @@ const CanvasModel = () => {
               < Shirt />
             </Center>
         </CameraRig>
+        {/* <Stats /> */}
+        {/* </Suspense> */}
       </Canvas>
     )
 }

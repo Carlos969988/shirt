@@ -43,13 +43,13 @@ const FilePicker = ({ file, setFile, readFile, updateDecalPosition }) => {
           onChange={(e) => setFile(e.target.files[0])}
         />
         <label htmlFor="file-upload" className="filepicker-label">
-          Upload File
+          Subir Imagen
         </label>
 
         <p className="mt-2 text-gray-500 text-xs truncate">
-          {file === '' ? "No file selected" : file.name}
+          {file === '' ? "No has cargado imagen" : file.name}
         </p>
-
+{/* 
         <CustomButton 
           type="filled"
           title="Posición Inicial"
@@ -58,12 +58,12 @@ const FilePicker = ({ file, setFile, readFile, updateDecalPosition }) => {
           handleClick={() => {state.position = [0, 0.04, 0.15]
           state.scale = 0.15}}
           customStyles="text-xs"
-        />
+        /> */}
       </div>
       <div className="mt-4 flex flex-wrap gap-3">
        
         <CustomButton 
-          type="outline"
+          type="filled"
           title="P1"
           handleClick={() => {
             state.position =[0, 0, 0.1]
@@ -71,7 +71,7 @@ const FilePicker = ({ file, setFile, readFile, updateDecalPosition }) => {
           customStyles="text-xs"
         />
         <CustomButton 
-          type="outline"
+          type="filled"
           title="P2"
           handleClick={() => {
             state.position =[0.02, -0.2, 0.1]
@@ -79,7 +79,7 @@ const FilePicker = ({ file, setFile, readFile, updateDecalPosition }) => {
           customStyles="text-xs"
         />
         <CustomButton 
-          type="outline"
+          type="filled"
           title="P3"
           handleClick={() => {
             state.position =[0.06, 0.09, 0.13]
@@ -87,7 +87,7 @@ const FilePicker = ({ file, setFile, readFile, updateDecalPosition }) => {
           customStyles="text-xs"
         />
         <CustomButton 
-          type="outline"
+          type="filled"
           title="P4"
           handleClick={() => {
             state.position =[0, 0.06, 0.15]
@@ -109,6 +109,7 @@ const FilePicker = ({ file, setFile, readFile, updateDecalPosition }) => {
           handleClick={() => readFile('full')}
           customStyles="text-xs"
         />
+        
       </div>
     </div>
   )

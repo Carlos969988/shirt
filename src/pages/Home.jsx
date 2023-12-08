@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSnapshot } from 'valtio';
 import {
@@ -11,6 +12,8 @@ import { CustomButton } from '../components';
 
 const Home = () => {
     const snap = useSnapshot(state);
+
+
     return (
         <AnimatePresence>
             {snap.intro && (

@@ -9,6 +9,9 @@ import { downloadCanvasToImage, reader } from '../config/helpers';
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants';
 import { fadeAnimation, slideAnimation } from '../config/motion';
 import { AIPicker, ColorPicker, FilePicker, CustomButton, Tab, ModalSend } from '../components';
+import useCustomControls from "../components/UseControls";
+import { useSharedState } from "../components/sharedState";
+
 
 const Customizer = () => {
   const snap = useSnapshot(state);
@@ -35,6 +38,20 @@ const Customizer = () => {
       setActiveEditorTab(tabName);
     }
   }
+
+  useEffect(() => {
+    state.customizerActive = true;
+    return () => {
+      state.customizerActive = false;
+    };
+  }, []);
+
+  const {
+    pos, setPos, posBack, setPosBack, posRight, setPosRight, posLeft, setPosLeft, rota, setRota, rotaBack, 
+    setRotaBack, rotaArms, setRotaArms, sca, setSca, scaBack, setScaBack, scaRightArm, setScaRightArm, scaLeftArm, setScaLeftArm 
+  } = useSharedState();
+
+  // const { front, back, right, left } = useCustomControls(); // Obtén las funciones del hook
 
 
   // show tab content depending on the activeTab
@@ -233,6 +250,8 @@ const Customizer = () => {
               handleClick={() => state.intro = true}
               customStyles="w-fit px-4 py-2.5 font-bold text-sm"
             />
+
+            
           </motion.div>
 
           <motion.div
@@ -250,6 +269,7 @@ const Customizer = () => {
               />
 
             ))}
+            
           </motion.div>
         </>
       )}
