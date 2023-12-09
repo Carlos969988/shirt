@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useSnapshot } from 'valtio';
+import { Leva } from 'leva'
 
 import config from '../config/config';
 import state from '../store';
@@ -273,6 +274,7 @@ const Customizer = () => {
           </motion.div>
         </>
       )}
+    <Leva collapsed />
     </AnimatePresence>
   )
 }

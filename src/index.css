@@ -122,3 +122,16 @@ input[type="file"] {
   backdrop-filter: blur(10px); /* Efecto de desenfoque para glassmorphism */
   border: 1px solid rgba(255, 255, 255, 0.5); /* Borde para glassmorphism */
 }
+
+/* styles.css */
+
+
+.leva__row__title {
+  color: white; /* Cambiar el color del título del control */
+}
+
+.leva__input {
+  background-color: white; /* Cambiar el color de fondo del input */
+  opacity: 0.5; /* Cambiar la opacidad del input */
+}
+

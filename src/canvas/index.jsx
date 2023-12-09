@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Center, Stats } from '@react-three/drei';
 import { Suspense } from 'react'
-
+import { Leva } from 'leva'
 
 import Shirt from './Shirt';
 import Backdrop from './Backdrop';

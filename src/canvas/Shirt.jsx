@@ -7,11 +7,13 @@ import { Decal, useGLTF, useTexture, PresentationControls} from '@react-three/dr
 
 import state from '../store';
 import { TextureLoader, AlphaFormat, MeshBasicMaterial, MeshStandardMaterial, MeshLambertMaterial, MeshMatcapMaterial, MeshPhongMaterial, MeshPhysicalMaterial, MeshNormalMaterial } from 'three';
-import { useControls } from 'leva';
+import { useControls, Leva, levaStore } from 'leva'
+// import { useControls,  } from 'leva';
 import { degToRad } from 'three/src/math/MathUtils';
 import MaterialMenu from './MaterialMenu' 
 import useCustomControls from "../components/UseControls";
 import { useSharedState } from "../components/sharedState";
+import '../index.css';
 
 const Shirt = () => {
   const snap = useSnapshot(state);
@@ -68,12 +70,12 @@ const Shirt = () => {
   //   setRotaBack, rotaArms, setRotaArms, sca, setSca, scaBack, setScaBack, scaRightArm, setScaRightArm, scaLeftArm, setScaLeftArm 
   // } = useSharedState();
 
-
   // const { front, back, right, left } = useCustomControls();
 
 
   const front = useControls('Pecho', {
-    
+    value: 'green',
+
     Horizontal: {
       min: degToRad(-70),
       max: degToRad(60),
@@ -107,6 +109,7 @@ const Shirt = () => {
         setSca(() => [value, value, 0.15]);
       },
     },
+  
   });
 
   const back = useControls('Espalda', {
@@ -306,6 +309,7 @@ const Shirt = () => {
     // polar={[-Infinity, Infinity]} // Sin límites verticales
     // azimuth={[-Infinity, Infinity]} // Sin límites horizontales
     >
+      
     <group key={stateString}>
 
        {/* // Front */}
@@ -342,7 +346,7 @@ const Shirt = () => {
       </mesh>
 
     </group>
-    
+      
     {/* <MaterialMenu setSelected={setSelected} /> */}
     </PresentationControls>
     
